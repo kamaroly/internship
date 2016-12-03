@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Sentinel\Models\User as Authenticatable;
 
 class User extends Authenticatable
 {
@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Relationship with resume
+     * @return  relationship
+     */
+    public function resumes()
+    {
+        return $this->hasMany('App\Resume');
+    }
 }

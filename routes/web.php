@@ -11,6 +11,20 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/',['as'=>'home', function () {
     return view('welcome');
+}]);
+
+Route::get('/home',['middleware' => 'sentry.auth', function() {
+    return view('home');
+}]);
+
+////////////////////
+// RESUMES ROUTES //
+////////////////////
+
+Route::group(['prefix' => 'resumes','middleware'=>'sentry.auth'], function() {
+    Route::get('/',['as'=>'resumes.index','uses'=>'ResumeController@index']);
+    Route::get('/create',['as'=>'resumes.create','uses'=>'ResumeController@create']);
+    Route::post('/store',['as'=>'resumes.store','uses'=>'ResumeController@store']);
 });

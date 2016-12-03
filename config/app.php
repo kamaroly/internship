@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Student',
 
     /*
     |--------------------------------------------------------------------------
@@ -166,6 +166,8 @@ return [
         /*
          * Package Service Providers...
          */
+        Sentinel\SentinelServiceProvider::class, 
+     Laracasts\Flash\FlashServiceProvider::class,
 
         //
 
