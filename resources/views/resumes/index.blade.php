@@ -6,32 +6,28 @@
  Resumes
 @stop
 
+@section('nav-left')
+    <!-- Side Navigation -->
+    @include('resumes.nav-left')
+@endsection
 {{-- Content --}}
 @section('content')
-<div class="row">
-	<div class="page-header">
-    <div class="btn-toolbar pull-right">
-        <div class="btn-group">
-            <a class="btn btn-sm btn-success" href="{{ route('resumes.create') }}">Add resume</a>
-        </div>
+<div class="toolbar-widget list-header" id="Toolbar-listToolbar">
+    <div class="control-toolbar">
+
+        <!-- Control Panel -->
+        <div class="toolbar-item toolbar-primary">
+        <div data-control="toolbar" data-disposable="">
+    <a href="{{ route('resumes.create') }}" class="btn btn-primary oc-icon-plus">
+        New resume    
+    </a>
     </div>
-  		    <h1>Current resumes</h1>
-</div>
+        </div>
+
+    </div>
 </div>
 
 <div class="row">
-	<table class="table table-striped table-bordered">
-	<thead>
-		<tr>
-			<th>ID</th>
-			<th>Student email</th>
-			<th>Title</th>
-			<th>Short description</th>
-		</tr>
-	</thead>
-
-	<tbody>
-		@each ('resumes.item', $resumes, 'resume', 'Nothing to show')
-	</tbody>
+    @include('resumes.table')
 </div>
 @stop

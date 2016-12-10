@@ -27,6 +27,7 @@ class ResumeRequest extends FormRequest
         return [
             'title' => 'required',
             'resume' => 'required', 
+            'file'   => 'required',
         ];
     }
 }
