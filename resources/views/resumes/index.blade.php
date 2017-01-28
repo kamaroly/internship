@@ -16,18 +16,17 @@
     <div class="control-toolbar">
 
         <!-- Control Panel -->
-        <div class="toolbar-item toolbar-primary">
-        <div data-control="toolbar" data-disposable="">
-    <a href="{{ route('resumes.create') }}" class="btn btn-primary oc-icon-plus">
-        New resume    
-    </a>
-    </div>
-        </div>
+         <a href="{{ route('resumes.create') }}" class="btn btn-primary oc-icon-plus">
+            Add resume    
+        </a>
 
     </div>
 </div>
 
 <div class="row">
-    @include('resumes.table')
+    {!! $resumes->render() !!}
+        @include('resumes.table')
+    {!! $resumes->render() !!}
+    
 </div>
 @stop

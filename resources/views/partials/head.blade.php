@@ -16,5 +16,25 @@
 	.body-content{
 		margin: 30px;
 	}
+	.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 22px 0;
+    border-radius: 4px;
+}
+.pagination > li {
+    display: inline;
+}
+	.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.6;
+    text-decoration: none;
+    color: #3097D1;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+}
 </style>
 </head>

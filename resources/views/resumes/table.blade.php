@@ -9,7 +9,7 @@
         </th>
         <th>Student email</th>
         <th>Title</th>
-        <th>Short description</th>
+        <th>Actions</th>
     </tr>
 </thead>
 

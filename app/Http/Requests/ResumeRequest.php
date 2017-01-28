@@ -24,10 +24,19 @@ class ResumeRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'title' => 'required',
+        $rules =  [
+            'title'  => 'required',
             'resume' => 'required', 
             'file'   => 'required',
         ];
+
+        // If we are updating, do not validate
+        // the file because it is already
+        // in the database
+        if ($this->has('resume_id')) {
+            unset($rules['file']);
+        }
+
+        return $rules;
     }
 }

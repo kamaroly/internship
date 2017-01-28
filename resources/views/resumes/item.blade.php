@@ -7,5 +7,10 @@
 	</td>
 	<td>{{ $resume->user->email }}</td>
 	<td>{{ $resume->title }}</td>
-	<td>{{ substr($resume->resume,0,15) }}</td>
+	<td>
+	    <a href="{{ route('resumes.edit',$resume->id) }}" class="btn btn-sm btn-primary"> <i class="icon-pencil"> </i> Edit</a>
+	    <a href="{{ route('resumes.delete',$resume->id) }}" class="btn btn-sm btn-danger"
+			onclick="return confirm('Are you sure you want to delete {{ $resume->title}} ? This action cannot be reverted.')" 
+	    > <i class="icon-times"> </i> Delete</a>
+	</td>
 </tr>
