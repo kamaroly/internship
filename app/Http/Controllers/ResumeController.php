@@ -18,6 +18,9 @@ class ResumeController extends Controller
     public function index()
     {
     	$resumes = Resume::paginate(20);
+        if (request()->has('q')) {
+            $resumes = Resume::search(request()->get('q'))->paginate(20);
+        }
     	return view('resumes.index',compact('resumes'));
     }
 

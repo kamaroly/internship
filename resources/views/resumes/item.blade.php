@@ -5,7 +5,7 @@
 	        <label for="Lists-checkbox-{{ $resume->id }}">Check</label>
 	    </div>
 	</td>
-	<td>{{ $resume->user->email }}</td>
+	<td>{{ $resume->user->first_name }} {{ $resume->user->last_name }}</td>
 	<td>{{ $resume->title }}</td>
 	<td>
 	    <a href="{{ route('resumes.edit',$resume->id) }}" class="btn btn-sm btn-primary"> <i class="icon-pencil"> </i> Edit</a>

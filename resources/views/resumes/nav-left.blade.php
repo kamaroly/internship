@@ -18,7 +18,7 @@
                         <span class="nav-icon">
                             <i class="icon-list-ul"></i>
                         </span>
-                        <span class="nav-label">Categories</span>
+                        <span class="nav-label">Resumes</span>
                     </a>
                     <span class="counter empty"></span>
                 </li>

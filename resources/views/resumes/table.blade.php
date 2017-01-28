@@ -7,13 +7,13 @@
                 <label for="Lists-checkboxAll"></label>
             </div>
         </th>
-        <th>Student email</th>
+        <th>Student names</th>
         <th>Title</th>
         <th>Actions</th>
     </tr>
 </thead>
 
 <tbody>
-    @each ('resumes.item', $resumes, 'resume', 'Nothing to show')
+    @each ('resumes.item', $resumes, 'resume', 'resumes.empty')
 </tbody>
 </table>

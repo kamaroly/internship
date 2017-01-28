@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Sentry;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Resume extends Model
 {
@@ -19,4 +21,48 @@ class Resume extends Model
     {
     	return $this->belongsTo('App\User');
     }
+
+    /**
+     * Search resume based on the give keyword
+     * @param   $keyword 
+     * @return  collection of found resume
+     */
+    public static function search($keyword)
+    {
+        return self::where('title','LIKE','%'.$keyword.'%')
+                   ->orWhere('resume','LIKE','%'.$keyword.'%');
+
+    }
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+        
+        static::bootUsedByUser();
+    }
+
+
+    /**
+     * Boot the global scope
+     */
+    protected static function bootUsedByUser()
+    {
+
+
+        static::addGlobalScope('user', function (Builder $builder) {
+
+            $user =  Sentry::getUser();
+            // Only apply filter if the user is not part of 
+            // the admin group
+            if (!$user->hasAccess('admin')) {
+                $builder->where('user_id', Sentry::getUser()->id);
+            }
+        });
+    }
+
 }
