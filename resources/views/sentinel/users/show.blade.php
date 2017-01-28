@@ -28,6 +28,9 @@ Home
 			@if ($user->last_name)
 		    	<p><strong>Last Name:</strong> {{ $user->last_name }} </p>
 			@endif
+			@if ( $user->region)
+		    	<p><strong>Location / region:</strong> {{ $user->region }} </p>
+			@endif
 		    <p><strong>Email:</strong> {{ $user->email }}</p>
 		    
 		</div>
@@ -53,10 +56,4 @@ Home
 	</div>
 	
 	<hr />
-
-	<h4>User Object</h4>
-	<div>
-		<p>{{ var_dump($user) }}</p>
-	</div>
-
 @stop

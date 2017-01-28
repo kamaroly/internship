@@ -40,11 +40,11 @@
         <a href="index.html" class="brand-logo white-text">Interns</a>
         <a href="#" data-activates="mobile-menu" class="lt-mobile-toggle button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li class="active"><a href="index.html">Home</a></li>
-          <li class=""><a href="about.html">About</a></li>
+          <li class="active"><a href="/home">Home</a></li>
+{{--           <li class=""><a href="about.html">About</a></li>
           <li class=""><a href="portfolio.html">Portfolio</a></li>
           <li class=""><a href="contact.html">Contact</a></li>
-        </ul>
+ --}}        </ul>
         <ul class="side-nav" id="mobile-menu">
           <li class="active"><a href="index.html">Home</a></li>
           <li class=""><a href="about.html">About</a></li>
@@ -126,7 +126,7 @@
   <div class="lt-row row">
     <div class="lt-col col m4 s12">
       <i class="large pe-7s-edit primary-color-text"></i>
-      <h5>Customizable</h5>
+      <h5>Powerful</h5>
       <p>Develop a system of design that allows for a unified user experience across all their products on any platform.</p>
     </div>
     <div class="lt-col col m4 s12">
