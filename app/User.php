@@ -35,4 +35,13 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Resume');
     }
+
+    /**
+     * [favorites description]
+     * @return [type] [description]
+     */
+    public function favorites()
+    {
+        return $this->belongsToMany('App\Resume', 'employer_favorites', 'employer_id', 'resume_id');
+    }
 }

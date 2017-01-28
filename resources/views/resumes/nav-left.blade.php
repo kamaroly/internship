@@ -22,6 +22,16 @@
                     </a>
                     <span class="counter empty"></span>
                 </li>
+
+                <li class="{{ request()->is('*favorites*') ? 'active' :'' }}">
+                    <a href="{{ route('resumes.favorites') }}">
+                        <span class="nav-icon">
+                            <i class="icon-star"></i>
+                        </span>
+                        <span class="nav-label">Favorites</span>
+                    </a>
+                    <span class="counter empty"></span>
+                </li>
             </ul>
         </nav>
     </div>

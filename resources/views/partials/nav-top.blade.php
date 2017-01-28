@@ -1,3 +1,4 @@
+@if (Sentry::check())
 <div class="layout-row min-size">
 <nav class="navbar control-toolbar navbar-mode-inline" id="layout-mainmenu" role="navigation">
 <div class="toolbar-item toolbar-primary">
@@ -54,6 +55,7 @@
 				</a>
 			</li>
 		  @endif
+
 			</ul>
 		</div>
 	</div>
@@ -77,3 +79,4 @@
 	</div>
 	</nav>
 </div>
+@endif

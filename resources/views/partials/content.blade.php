@@ -4,7 +4,9 @@
             <!-- Content -->
             <div class="layout-row">
                <div class="body-content">
-                    @yield('content')
+                       <!-- Flash Messages -->
+                        @include('flash::message') 
+                       @yield('content')
                </div>
             </div>
         </div>

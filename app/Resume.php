@@ -59,7 +59,7 @@ class Resume extends Model
             $user =  Sentry::getUser();
             // Only apply filter if the user is not part of 
             // the admin group
-            if (!$user->hasAccess('admin')) {
+            if (!$user->hasAccess('admin') &&  !$user->hasAccess('employers')) {
                 $builder->where('user_id', Sentry::getUser()->id);
             }
         });

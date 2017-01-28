@@ -49,7 +49,7 @@ return [
     |
     */
 
-    'default_user_groups' => ['users'],
+    'default_user_groups' => ['interns'],
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'default_permissions' => ['admin', 'users'],
+    'default_permissions' => ['admin', 'interns','employers'],
 
     /*
     |--------------------------------------------------------------------------

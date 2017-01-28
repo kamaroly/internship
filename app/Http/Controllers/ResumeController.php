@@ -25,6 +25,41 @@ class ResumeController extends Controller
     }
 
     /**
+     * Browser favorite resumes
+     * @return 
+     */
+    public function favorites()
+    {
+        $user    = Sentry::getUser();
+        $resumes = $user->favorites()->paginate(20);
+
+        return view('resumes.index',compact('resumes'));
+    }
+
+    /**
+     * Browser favorite resumes
+     * @return 
+     */
+    public function addFavorites($resume)
+    {
+        $user    = Sentry::getUser();
+
+        // Check if this resume is already in the favorite if not
+        // then add it.
+        $count = $user->favorites()->where('resume_id',$resume)->count();
+        if ($count < 1) {
+              $user->favorites()->attach($resume);
+              flash()->success('Resume added to favorites');
+        }
+
+        if ($count > 0) {
+            $user->favorites()->detach($resume);
+            flash()->success('Resume removed from favorites');
+        }
+
+        return $this->show($resume);
+    }
+    /**
      * Show the form for creating resume
      * 
      * @return 
@@ -52,6 +87,25 @@ class ResumeController extends Controller
         return view('resumes.edit',compact('resume'));
     }
 
+    /**
+     * Show resume 
+     * @param   $resumeId 
+     * @return  
+     */
+    public function show($resumeId)
+    {
+         // Retrieve resume from the database 
+        // using its ID  if we dont find it
+        // we will generate an exception 
+        // and log it in the logs.
+        $resume = Resume::findOrFail($resumeId); 
+
+        // If this resume is in favorites of the user mark it.
+        $user = Sentry::getUser();
+        $inFavorite = $user->favorites()->where('resume_id',$resumeId)->count() > 0;
+
+        return view('resumes.show',compact('resume','inFavorite'));
+    }
     /**
      * Store a resume in the databsae
      * @param  ResumeRequest $request 

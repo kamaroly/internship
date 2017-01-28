@@ -14,7 +14,7 @@
 					
 					   @yield('nav-left')
 
-		                        <!-- Content Body -->
+                        <!-- Content Body -->
 		                @include('partials.content')        
                     </div>
                 </div>
@@ -22,8 +22,7 @@
             </div>
         </div>
 
-        <!-- Flash Messages -->
-        <div id="layout-flash-messages"></div>
+
 <!-- Javascripts
 ================================================== -->
 <script src="{{ asset('packages/rydurham/sentinel/js/jquery-2.1.3.min.js') }}"></script>
