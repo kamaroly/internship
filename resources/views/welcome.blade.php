@@ -40,7 +40,7 @@
         <a href="index.html" class="brand-logo white-text">Interns</a>
         <a href="#" data-activates="mobile-menu" class="lt-mobile-toggle button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li class="active"><a href="/home">Home</a></li>
+          <li class="active"><a href="/login">Login</a></li>
 {{--           <li class=""><a href="about.html">About</a></li>
           <li class=""><a href="portfolio.html">Portfolio</a></li>
           <li class=""><a href="contact.html">Contact</a></li>
